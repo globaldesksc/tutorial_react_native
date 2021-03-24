@@ -1,4 +1,4 @@
-# My Universal React Project
+# My First React Project
 
 <p>
   <!-- iOS -->
