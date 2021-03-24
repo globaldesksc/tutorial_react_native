@@ -7,6 +7,7 @@ import TodoItem from './components/todoItem';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
+  const [todoKey, setTodoKey] = useState(-1);
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
@@ -17,19 +18,21 @@ export default function App() {
   const submitHandler = (text) => {
 
     if(text.length > 3) {
+
+      setTodoKey(todoKey + 1);
+      
       setTodos((prevTodos) => {
         return [
-          { text: text, key: Math.random().toString() },
+          { text: text, key: todoKey.toString() },
           ...prevTodos
         ];
       });
+
     } else {
       Alert.alert('OOPS!', 'Todos must be over 3 characthers long!', [
         {text: 'OK', onPress: () => console.log('alert closed')}
       ])
     }
-
-    
   }
 
   return (
