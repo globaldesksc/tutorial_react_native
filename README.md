@@ -1,4 +1,4 @@
-# My First React Project
+# My First React Native Project
 
 <p>
   <!-- iOS -->
