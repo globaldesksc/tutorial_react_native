@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import AddTodo from './components/addTodo';
 import Header from './components/header';
+import Sandbox from './components/sandbox';
 import TodoItem from './components/todoItem';
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { text: 'buy coffee', key: '1' },
-    { text: 'create an app', key: '2' },
-    { text: 'play on the switch', key: '3' }
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
@@ -36,6 +33,7 @@ export default function App() {
   }
 
   return (
+    //<Sandbox />
     <TouchableWithoutFeedback onPress={() => {
       Keyboard.dismiss();
       console.log('dismissed keyboard')
@@ -64,9 +62,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
 });
